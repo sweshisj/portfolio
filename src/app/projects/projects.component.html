@@ -4,6 +4,7 @@
         <div class="project" *ngFor="let project of projects">
             <h3>{{ project.name }}</h3>
             <p>{{ project.description }}</p>
+            <p>Technologies Used: {{ project.technologies }}</p>
             <button (click)="showProjectDetails(project)">View Details</button>
         </div>
     </div>

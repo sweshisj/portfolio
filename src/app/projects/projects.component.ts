@@ -9,7 +9,24 @@ import { Component } from '@angular/core';
 })
 export class ProjectsComponent {
   projects = [
-    { name: "phaser", description: "developed 2D games" }
+    {
+      name: "Phaser Games Development",
+      description: "Developed two engaging and responsive gambling games, Piccobello and Crazy Race, using Phaser Framework to deliver interactive and visually appealing experiences.",
+      technologies: "PhaserJS, JavaScript, HTML/CSS, WebGL, Canvas",
+      detailedDesc: "Spearheaded the development of Piccobello, a chance-driven wheel game with strategic betting, ensuring meticulous implementation of wheel mechanics, bet processing, and dynamic win calculations for heightened player immersion. Also led the creation of Crazy Race, an exhilarating eight-object racing game engineered with Phaser, emphasizing diverse betting options, variable odds, and high-energy animations to maximize excitement and user engagement in predicting the winner. Both projects underscore a commitment to delivering captivating gambling experiences through carefully designed mechanics and vibrant presentations."
+    },
+    {
+      name: "Retail Point-of-Sale (POS) System and Navigator Website Front-End Development",
+      description: "Led front-end development for critical retail POS systems and customer-facing navigator websites, significantly enhancing user experience and navigation efficiency.",
+      technologies: "Angular, TypeScript, HTML5, CSS3, Node.js, Git, Maven, Java",
+      detailedDesc: "Successfully led the complete front-end development lifecycle for retail POS systems and navigator websites, creating intuitive and efficient user interfaces that improved overall user experience and streamlined navigation. This involved seamless integration of front-end components with back-end functionalities (Java/Maven), resulting in responsive POS interfaces that optimized the checkout process and user-friendly navigator websites with interactive features for effective information access. These enhancements demonstrably increased customer satisfaction at the point of sale and improved user engagement and accessibility on the digital platforms."
+    },
+    {
+      name: "Voting System Front-End Development",
+      description: "Developed the front-end of a dynamic voting system using PHP, HTML, CSS, JavaScript, and MongoDB, enabling real-time user feedback aggregation and a seamless interactive experience.",
+      technologies: "PHP, HTML, CSS, JavaScript, MongoDB",
+      detailedDesc: "Led the front-end engineering of a sophisticated voting system, employing PHP, HTML, CSS, and JavaScript to build an engaging and transparent platform for user feedback. Key contributions included designing an intuitive interface and implementing a robust rating calculation mechanism that dynamically displayed the company's average rating. Utilizing AJAX and MongoDB, the system allowed for seamless, real-time user rating submissions and immediate updates to the average rating, significantly enhancing user engagement and streamlining the feedback collection process for an improved overall user experience."
+    }
   ]
   showProjectDetails(project: any) {
 
