@@ -1,0 +1,22 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 5px;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .board div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    height: 100px;
+    background-color: lightblue;
+    cursor: pointer;
+  }
+  
+  .board div:hover {
+    background-color: lightcyan;
+  }

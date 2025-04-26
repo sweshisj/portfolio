@@ -1,0 +1,7 @@
+<div class="board">
+    <div *ngFor="let row of board; let i = index">
+      <div *ngFor="let cell of row; let j = index" (click)="makeMove(i, j)">
+        {{ cell }}
+      </div>
+    </div>
+  </div>
