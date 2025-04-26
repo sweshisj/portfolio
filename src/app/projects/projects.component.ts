@@ -28,7 +28,8 @@ export class ProjectsComponent {
       detailedDesc: "Led the front-end engineering of a sophisticated voting system, employing PHP, HTML, CSS, and JavaScript to build an engaging and transparent platform for user feedback. Key contributions included designing an intuitive interface and implementing a robust rating calculation mechanism that dynamically displayed the company's average rating. Utilizing AJAX and MongoDB, the system allowed for seamless, real-time user rating submissions and immediate updates to the average rating, significantly enhancing user engagement and streamlining the feedback collection process for an improved overall user experience."
     }
   ]
+  selectedProject: any = "";
   showProjectDetails(project: any) {
-
+    this.selectedProject = project;
   }
 }
