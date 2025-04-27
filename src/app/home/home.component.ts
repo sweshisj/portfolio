@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-
+  sendEmail() {
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=sweshisj@gmail.com', '_blank');
+  }
 }

@@ -1,0 +1,43 @@
+@import '../../styles/global.scss';
+
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom right, $color4, $color2);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+
+  .personal-info {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+
+    img {
+      max-width: 300px;
+    }
+
+    .info {
+      flex: 1;
+    }
+  }
+
+  .contact-details {
+    margin: 20px;
+
+    button {
+      background-color: $color2;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($color2, 10%);
+      }
+    }
+  }
+}
