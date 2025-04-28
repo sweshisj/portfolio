@@ -4,7 +4,7 @@
 .home-container {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to bottom right, $color4, $color2);
+  background: linear-gradient(to bottom right, var(--background-color), var(--accent-2));
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -27,16 +27,19 @@
   .contact-details {
     margin: 20px;
 
+    $background-color: var(--background-color); // Define a SCSS variable to hold the background color
+
     button {
-      background-color: $color2;
+      background-color: $background-color;
       color: white;
       padding: 8px 16px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      transition: background-color 0.3s; // Add a smooth transition for the background color change
 
       &:hover {
-        background-color: darken($color2, 10%);
+        background-color: rgba($background-color, 0.9); // Adjust the opacity to darken the color on hover
       }
     }
   }

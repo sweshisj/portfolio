@@ -1,7 +1,7 @@
 @import 'styles/global';
 
 body {
-    background: linear-gradient(to bottom right, $color1, $color5);
+    background: linear-gradient(to bottom right, --accent-1, --accent-2);
     margin: 0;
     font-family: Arial, sans-serif;
 }

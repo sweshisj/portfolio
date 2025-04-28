@@ -1,5 +1,5 @@
 .games-container {
-  background-color: #f6f6f6;
+  background: linear-gradient(to bottom right, var(--accent-1), var(--accent-2));
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -14,7 +14,6 @@
 .game-tile {
   position: relative;
   height: 200px;
-  /* Set the desired height */
   background-size: cover;
   background-position: center;
   border-radius: 5px;
@@ -25,7 +24,6 @@
 
 .game-tile:hover {
   transform: scale(1.05);
-  /* Optional: Scale up on hover */
 }
 
 .game-content {

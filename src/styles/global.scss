@@ -1,5 +1,36 @@
-$color1: #3D52A0;
-$color2: #7091E6;
-$color3: #8697C4;
-$color4: #ADBBDA;
-$color5: #EDE8F5;
+body {
+    transition: background-color 0.5s ease;
+    background-color: #ede8f5;
+    color: #3d52a0;
+    --text-primary: #3d52a0;
+    --background-color: #ede8f5;
+    --accent-1: #A8DADC;
+    --accent-2: #FFC1CC;
+}
+
+.light-theme {
+    background-color: #ede8f5;
+    color: #3d52a0;
+    --text-primary: #3d52a0;
+    --background-color: #ede8f5;
+    --accent-1: #fbc2b5;
+    --accent-2: #f786aa;
+}
+
+.dark-theme {
+    background-color: #121212;
+    color: #e0e0e0;
+    --text-primary: #e0e0e0;
+    --background-color: #121212;
+    --accent-1: #121212;
+    --accent-2: #888888;
+}
+
+.pastel-theme {
+    background-color: #2c2c2c;
+    color: #e4e4e4;
+    --text-primary: #e4e4e4;
+    --background-color: #2c2c2c;
+    --accent-1: #FFC1CC;
+    --accent-2: #A8DADC;
+}

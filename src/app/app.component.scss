@@ -1,8 +1,8 @@
 @import '../styles/global.scss';
 
 .navbar {
-    background: $color1;
-    color: white;
+    background: var(--background-color);
+    color: var(--text-primary);
     padding: 15px 30px;
     justify-content: end;
 }
@@ -12,6 +12,6 @@
 }
 
 .navbar a {
-    color: $color5;
+    color: var(--text-primary);
     text-decoration: none;
 }
