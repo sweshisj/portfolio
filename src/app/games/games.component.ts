@@ -13,17 +13,19 @@ export class GamesComponent {
     {
       id: 1,
       title: 'Tic-Tac-Toe',
-      description: 'A classic game where two players take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.'
+      description: 'A classic game where two players take turns marking spaces in a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.',
+      image: 'assets/tic-tac-toe.jpg'
     },
     {
       id: 2,
       title: 'Number Guessing Game',
-      description: 'Guess a random number between 1 and 100. The game will provide hints to help you determine whether the target number is higher or lower than your guess. Try to guess the number with the fewest attempts!'
+      description: 'Guess a random number between 1 and 100. The game will provide hints to help you determine whether the target number is higher or lower than your guess. Try to guess the number with the fewest attempts!',
+      image: 'assets/number-guess.jpg'
     }
   ];
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
   playGame(game: any) {
-    switch(game.id) {
+    switch (game.id) {
       case 1:
         this.router.navigate(['/tic-tac-toe']);
         break;

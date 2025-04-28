@@ -1,6 +1,59 @@
 .games-container {
-    background-color: #f6f6f6;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+  background-color: #f6f6f6;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.game-tile {
+  position: relative;
+  height: 200px;
+  /* Set the desired height */
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s;
+}
+
+.game-tile:hover {
+  transform: scale(1.05);
+  /* Optional: Scale up on hover */
+}
+
+.game-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.game-content h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.game-content p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.game-content button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
