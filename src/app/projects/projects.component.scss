@@ -1,14 +1,37 @@
-.projects-container {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  
-    .project-card {
-      background-color: #fff;
-      padding: 15px;
-      border-radius: 5px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+.projects {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
   }
+
+  .project-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    height: 200px; /* adjust as needed */
+  }
+
+  .project {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 0 10px;
+    flex: 0 0 100%; /* Each project takes up full width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute; /* Allows for absolute positioning of slides */
+    top: 0;
+  }
+
+  .project-details {
+    background-color: #e9e9e9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+}

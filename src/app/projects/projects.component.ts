@@ -1,11 +1,23 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-projects',
   imports: [CommonModule, NgFor],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrl: './projects.component.scss',
+  animations: [
+    trigger('slide',[
+      state('center', style({transform: 'translateX(0)', opacity: 1})),
+      state('left', style({transform: 'translateX(-100%)', opacity: 0})),
+      state('right', style({transform: 'translateX(100%)', opacity: 0})),
+      transition('center => left', animate('500ms ease-in-out')),
+      transition('center => right', animate('500ms ease-in-out')),
+      transition('left => center', animate('500ms ease-in-out')),
+      transition('right => center', animate('500ms ease-in-out'))
+    ])
+  ]
 })
 export class ProjectsComponent {
   projects = [
@@ -28,8 +40,51 @@ export class ProjectsComponent {
       detailedDesc: "Led the front-end engineering of a sophisticated voting system, employing PHP, HTML, CSS, and JavaScript to build an engaging and transparent platform for user feedback. Key contributions included designing an intuitive interface and implementing a robust rating calculation mechanism that dynamically displayed the company's average rating. Utilizing AJAX and MongoDB, the system allowed for seamless, real-time user rating submissions and immediate updates to the average rating, significantly enhancing user engagement and streamlining the feedback collection process for an improved overall user experience."
     }
   ]
-  selectedProject: any = "";
+  selectedProject: any = null;
+  currentIndex = 0;
+  slideInterval: any;
+  isPaused = false;
+
+  ngOnInit() {
+    this.startSlideShow();
+  }
+
+  ngOnDestroy() {
+    this.stopSlideShow();
+  }
+
+  startSlideShow() {
+    this.slideInterval = setInterval(() => {
+      if (!this.isPaused) {
+        this.currentIndex = (this.currentIndex + 1) % this.projects.length;
+      }
+    }, 5000); 
+  }
+
+  stopSlideShow() {
+    clearInterval(this.slideInterval);
+    this.slideInterval = null;
+  }
+
   showProjectDetails(project: any) {
     this.selectedProject = project;
+    this.isPaused = true;
+    this.stopSlideShow();
+  }
+
+  hideProjectDetails() {
+    this.selectedProject = null;
+    this.isPaused = false;
+    this.startSlideShow();
+  }
+
+  getSlideState(index: number): string {
+    if (index === this.currentIndex) {
+      return 'center';
+    } else if (index === (this.currentIndex - 1 + this.projects.length) % this.projects.length) {
+      return 'left';
+    } else {
+      return 'right';
+    }
   }
 }
