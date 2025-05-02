@@ -8,10 +8,10 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
   animations: [
-    trigger('slide',[
-      state('center', style({transform: 'translateX(0)', opacity: 1})),
-      state('left', style({transform: 'translateX(-100%)', opacity: 0})),
-      state('right', style({transform: 'translateX(100%)', opacity: 0})),
+    trigger('slide', [
+      state('center', style({ transform: 'translateX(0)', opacity: 1 })),
+      state('left', style({ transform: 'translateX(-100%)', opacity: 0 })),
+      state('right', style({ transform: 'translateX(100%)', opacity: 0 })),
       transition('center => left', animate('500ms ease-in-out')),
       transition('center => right', animate('500ms ease-in-out')),
       transition('left => center', animate('500ms ease-in-out')),
@@ -54,11 +54,13 @@ export class ProjectsComponent {
   }
 
   startSlideShow() {
-    this.slideInterval = setInterval(() => {
-      if (!this.isPaused) {
-        this.currentIndex = (this.currentIndex + 1) % this.projects.length;
-      }
-    }, 5000); 
+    if (typeof window !== 'undefined') {
+      this.slideInterval = setInterval(() => {
+        if (!this.isPaused) {
+          this.currentIndex = (this.currentIndex + 1) % this.projects.length;
+        }
+      }, 5000);
+    }
   }
 
   stopSlideShow() {

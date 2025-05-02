@@ -10,7 +10,9 @@ export class ThemeSwitcherService {
 
   setTheme(theme: string) {
     this.currentTheme = theme;
-    document.body.className = theme + '-theme';
+    if (typeof document !== 'undefined') {
+      document.body.className = theme + '-theme';
+    }
   }
 
   getTheme(): string {
