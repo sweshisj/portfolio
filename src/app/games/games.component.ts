@@ -21,7 +21,15 @@ export class GamesComponent {
       title: 'Number Guessing Game',
       description: 'Guess a random number between 1 and 100. The game will provide hints to help you determine whether the target number is higher or lower than your guess. Try to guess the number with the fewest attempts!',
       image: 'assets/number-guess.jpg'
+    },
+
+    {
+      id: 3,
+      title: 'Hangman',
+      description: 'A word guessing game where you try to guess a hidden word by suggesting letters within a certain number of guesses. Each incorrect guess brings you closer to losing the game.',
+      image: 'assets/hangman.jfif'
     }
+
   ];
   constructor(private router: Router) { }
   playGame(game: any) {
@@ -31,6 +39,9 @@ export class GamesComponent {
         break;
       case 2:
         this.router.navigate(['/number-guess']);
+        break;
+      case 3:
+        this.router.navigate(['/hangman']);
         break;
       default:
         console.log('Game not found');

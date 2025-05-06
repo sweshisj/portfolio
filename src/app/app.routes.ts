@@ -6,5 +6,7 @@ export const routes: Routes = [
     { path: "projects", loadComponent: () => import('./projects/projects.component').then(c => c.ProjectsComponent) },
     { path: "games", loadComponent: () => import('./games/games.component').then(c => c.GamesComponent) },
     { path: "tic-tac-toe", loadComponent: () => import('./games/tic-tac-toe/tic-tac-toe.component').then(c => c.TicTacToeComponent) },
-    { path: "number-guess", loadComponent: () => import('./games/number-guess/number-guess.component').then(c => c.NumberGuessComponent) }
+    { path: "number-guess", loadComponent: () => import('./games/number-guess/number-guess.component').then(c => c.NumberGuessComponent) },
+    { path: "hangman", loadComponent: () => import('./games/hangman/hangman.component').then(c => c.HangmanComponent) }
+
 ];

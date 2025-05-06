@@ -1,0 +1,32 @@
+<div class="hangman-container">
+    <button class="info-button" (mouseover)="showInstructions = true" (mouseout)="showInstructions = false">ℹ️</button>
+    <div *ngIf="showInstructions" class="info-tooltip">
+        <p>A word guessing game where you try to guess a hidden word by suggesting letters within a certain number of
+            guesses. Each incorrect guess brings you closer to losing the game.</p>
+    </div>
+    <h1>Hangman Game</h1>
+
+    <div class="hangman-image">
+        <img [src]="getHangmanImage()" alt="Hangman Image">
+    </div>
+
+    <div class="word">
+        <p>{{ guessedWord.toUpperCase() }}</p>
+    </div>
+
+    <!-- Display Keyboard Keys as Buttons -->
+    <div class="keyboard">
+        <button *ngFor="let letter of alphabet"
+            [disabled]="guessedLetters.includes(letter) || guessedWord.toUpperCase().includes(letter)"
+            (click)="makeGuess(letter)">
+            {{ letter }}
+        </button>
+    </div>
+
+    <div class="game-status" *ngIf="isGameOver()">
+        <p *ngIf="isWinner()">You Win!</p>
+        <p *ngIf="incorrectGuesses >= maxIncorrectGuesses && !isWinner()">Game Over. The word was "{{ selectedWord }}"
+        </p>
+        <button (click)="newGame()">New Game</button>
+    </div>
+</div>
