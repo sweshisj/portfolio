@@ -1,22 +1,107 @@
+.tic-tac-toe-container {
+  background: linear-gradient(to bottom right, var(--accent-1), var(--accent-2));
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.info-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.info-tooltip {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  background: linear-gradient(to bottom right, var(--accent-1), var(--accent-2));
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: none;
+}
+
+.info-tooltip p {
+  margin: 5px 0;
+}
+
+.info-button:hover+.info-tooltip,
+.info-tooltip:hover {
+  display: block;
+}
+
 .board {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 5px;
-    max-width: 300px;
-    margin: 0 auto;
-  
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 24px;
-      height: 100px;
-      background-color: lightblue;
-      cursor: pointer;
-  
-      &:hover {
-        background-color: lightcyan;
-      }
-    }
-  }
+  display: flex;
+  /* Use flex to arrange the rows in a column */
+  flex-direction: column;
+  gap: 5px;
+  /* Gap between the rows */
+  margin-bottom: 20px;
+  width: fit-content;
+  /* Adjust width as needed */
+}
+
+.board div {
+  /* Style for each row */
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  /* Three equal columns for the cells */
+  gap: 5px;
+  /* Gap between the cells in the row */
+}
+
+.board div div {
+  /* Style for each cell */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background-color: lightblue;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100px;
+  /* Ensure cells are square */
+  height: 100px;
+  /* Ensure cells are square */
+}
+
+.board div div:hover {
+  background-color: lightcyan;
+}
+
+.board div div:active {
+  outline: none;
+  background-color: lightblue !important;
+}
+
+.player-x {
+  color: #FF4136;
+}
+
+.player-o {
+  color: #0074D9;
+}
+.winner-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: #a529b9; /* Red color for X */
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
