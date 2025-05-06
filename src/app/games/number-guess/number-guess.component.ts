@@ -27,8 +27,5 @@ export class NumberGuessComponent {
     } else {
       this.message = 'Try a lower number.';
     }
-    setTimeout(() => {
-      this.message = "";
-    }, 5000);
   }
 }
