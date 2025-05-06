@@ -1,17 +1,20 @@
-import { Component, NgModule } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 @Component({
   selector: 'app-number-guess',
-  imports: [FormsModule],
+  imports: [FormsModule, NgIf],
   templateUrl: './number-guess.component.html',
   styleUrl: './number-guess.component.scss'
 })
 export class NumberGuessComponent {
-  targetNumber: number;
   userGuess: number = 0;
+  targetNumber: number;
   message: string = "";
-
+  showInstructions: boolean = false;
+  
   constructor() {
     this.targetNumber = Math.floor(Math.random() * 100) + 1;
   }
@@ -24,5 +27,8 @@ export class NumberGuessComponent {
     } else {
       this.message = 'Try a lower number.';
     }
+    setTimeout(() => {
+      this.message = "";
+    }, 5000);
   }
 }

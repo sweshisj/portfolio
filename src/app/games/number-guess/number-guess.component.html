@@ -1,5 +1,15 @@
-<h2>Number Guessing Game</h2>
-<p>Guess a number between 1 and 100:</p>
-<input type="number" [(ngModel)]="userGuess" />
-<button (click)="checkGuess()">Check</button>
-<p>{{ message }}</p>
+<div class="number-guess-container">
+    <button class="info-button" (mouseover)="showInstructions = true" (mouseout)="showInstructions = false">ℹ️</button>
+    <div *ngIf="showInstructions" class="info-tooltip">
+      <p>Guess a number between 1 and 100.</p>
+      <p>Click "Check" to see if you guessed correctly.</p>
+    </div>
+    
+    <h2>Number Guessing Game</h2>
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" [(ngModel)]="userGuess" />
+    <br/>
+    <button class="btn btn-primary" (click)="checkGuess()">Check</button>
+    <br/>
+    <p>{{ message }}</p>
+  </div>
